@@ -75,6 +75,7 @@ class TargetConfig:
     relation: BaseRelation
     column_list: Sequence[Column]
     location: Optional[TargetLocation] = None
+    config: dict
 
     def as_dict(self) -> Dict[str, Any]:
         base = {

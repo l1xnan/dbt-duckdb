@@ -83,11 +83,13 @@ class DuckDBAdapter(SQLAdapter):
         column_list: Sequence[Column],
         path: str,
         format: str,
+        config: Optional[dict] = None,
     ) -> None:
         target_config = TargetConfig(
             relation=relation,
             column_list=column_list,
             location=TargetLocation(path=path, format=format),
+            config=config
         )
         DuckDBConnectionManager.env().store_relation(plugin_name, target_config)
 
